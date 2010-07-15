@@ -1,2 +1,28 @@
 <h1>Users#new</h1>
 <p>Find me in app/views/users/new.html.erb</p>
+
+<h3> PLease enter the values for the Sign Up form </h3>
+
+<% form_for (@user) do |f| %>
+  <div class="field">
+    <%= f.label :name %> 
+    <%= f.text_field :name %>
+  </div> 
+
+
+  <div class="field">
+    <%= f.label :email %> 
+    <%= f.text_field :email %>
+  </div> 
+
+
+  <div class="field">
+    <%= f.label :password %> 
+    <%= f.password_field :encrypted_password %>
+  </div>
+
+  <div class="actions">
+    <%=f.submit "Sign Up" %>
+  </div>
+
+<% end %> 

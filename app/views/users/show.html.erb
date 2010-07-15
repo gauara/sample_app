@@ -1,3 +1,15 @@
 <br>
 <h3> Data Fecthed from the Database </h3>
-<%= @user.name %>,  <%=@user.email %>
+#<%= @user.each {|x| puts " x.name  x.email" } %>
+<%= puts @user.to_s %>
+<% if @user.blank? %>
+<p>There are not any user currently in the system.</p>
+<% else %>
+<p>These are the current user in our system</p>
+<ul id="user">
+<% @user.each do |c| %>
+<li><%= link_to c.name, {:action => 'show', :id => c.id} -%></li>
+<% end %>
+</ul>
+<% end %>
+<p><%= link_to "Add new Book", {:action => 'new' }%></p>
